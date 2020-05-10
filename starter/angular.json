@@ -1,0 +1,146 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "stw-admin": {
+      "root": "",
+      "sourceRoot": "stw",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist",
+            "index": "stw/index.html",
+            "main": "stw/main.ts",
+            "tsConfig": "stw/tsconfig.app.json",
+            "polyfills": "stw/polyfills.ts",
+            "assets": [
+              "stw/assets",
+              "stw/favicon.ico"
+            ],
+            "styles": [
+              "stw/assets/fonts/linea/styles.css",
+              "stw/assets/fonts/header/_flaticon.scss",
+              "node_modules/dragula/dist/dragula.css",
+              "node_modules/quill/dist/quill.snow.css",
+              "node_modules/angular-calendar/scss/angular-calendar.scss",
+              "node_modules/@swimlane/ngx-datatable/release/index.css",
+              "stw/assets/fonts/data-table/icons.css",
+              "stw/assets/styles/app.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "stw/environments/environment.ts",
+                  "with": "stw/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "stw-admin:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "stw-admin:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "stw-admin:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "stw/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "stw/polyfills.ts",
+            "tsConfig": "stw/tsconfig.spec.json",
+            "scripts": [],
+            "styles": [
+              "stw/assets/fonts/linea/styles.css",
+              "stw/assets/fonts/header/_flaticon.scss",
+              "node_modules/dragula/dist/dragula.css",
+              "node_modules/quill/dist/quill.snow.css",
+              "node_modules/angular-calendar/scss/angular-calendar.scss",
+              "node_modules/@swimlane/ngx-datatable/release/index.css",
+              "stw/assets/fonts/data-table/icons.css",
+              "stw/assets/styles/app.scss"
+            ],
+            "assets": [
+              "stw/assets",
+              "stw/favicon.ico"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "stw/tsconfig.app.json",
+              "stw/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "decima-e2e": {
+      "root": "",
+      "sourceRoot": "",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "./protractor.conf.js",
+            "devServerTarget": "stw-admin:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "stw-admin",
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "app",
+      "styleext": "scss"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "app"
+    }
+  }
+}

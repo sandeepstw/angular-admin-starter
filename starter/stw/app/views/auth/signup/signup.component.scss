@@ -1,0 +1,19 @@
+:host {
+    .signin-bg-cover {
+        position: relative;
+        .page-signin {
+            position: absolute;
+            left: 50%;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            margin-left: -200px;
+            width: 400px;
+        }
+        .app-btn:hover {
+            background-color: #39c;
+            color: #fff;
+            border: 1px solid #39c;
+        }
+    }
+}

@@ -1,0 +1,81 @@
+<nav class="navbar custom-navbar bg-faded main-header">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a href="javascript:;" class="nav-link" (click)="toggleSidebar.emit()">
+                <i class="hamburger-icon v2">
+          <span></span>
+        </i>
+            </a>
+        </li>
+    </ul>
+    <span class="navbar-heading hidden-xs-down">{{heading}}</span>
+    <span class="mr-auto"></span>
+    <ul class="navbar-nav">
+        <li class="nav-item" ngbDropdown placement="bottom-right">
+            <a href="javascript:;" class="nav-link" ngbDropdownToggle>
+                <img src="assets/images/avatar.jpg" class="navbar-avatar rounded-circle" alt="user" title="user">
+            </a>
+            <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="javascript:;">
+                    <i class="icon icon-basic-settings mr-3"></i>
+                    <span>Settings</span>
+                </a>
+                <a class="dropdown-item" href="javascript:;">
+                    <i class="icon icon-basic-postcard mr-3"></i>
+                    <span>Profile</span>
+                </a>
+                <a class="dropdown-item" href="javascript:;">
+                    <i class="icon icon-basic-message-multiple mr-3"></i>
+                    <span>Notifications</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="javascript:;">
+                    <i class="icon icon-arrows-switch-vertical mr-3"></i>
+                    <span>Signout</span>
+                </a>
+            </div>
+        </li>
+        <li class="nav-item" ngbDropdown placement="bottom-right">
+            <a href="javascript:;" class="nav-link" ngbDropdownToggle>
+                <i class="fi flaticon-notification"></i>
+                <span class="badge badge-danger">4</span>
+            </a>
+            <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right notifications">
+                <div class="notifications-wrapper">
+                    <a href="javascript:;" class="dropdown-item">
+                        <span class="badge badge-warning">NEW</span> &nbsp;Sean launched a new application
+                        <span class="time">2 seconds ago</span>
+                    </a>
+                    <a href="javascript:;" class="dropdown-item">
+            Removed calendar from app list
+            <span class="time">4 hours ago</span>
+          </a>
+                    <a href="javascript:;" class="dropdown-item">
+            Jack Hunt has joined mailing list
+            <span class="time">9 days ago</span>
+          </a>
+                    <a href="javascript:;" class="dropdown-item">
+                        <span class="text-muted">Conan Johns created a new list</span>
+                        <span class="time">9 days ago</span>
+                    </a>
+                </div>
+                <div class="notification-footer">Notifications</div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;" class="nav-link" (click)="toggleFullscreen.emit()">
+                <i class="fi flaticon-fullscreen"></i>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <span class="nav-divider"></span>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;" class="nav-link" (click)="openSearch.emit()">
+                <i class="fi flaticon-search"></i>
+            </a>
+        </li>
+
+    </ul>
+</nav>

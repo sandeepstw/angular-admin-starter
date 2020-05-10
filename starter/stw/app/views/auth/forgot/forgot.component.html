@@ -1,0 +1,19 @@
+<div class="d-flex align-items-stretch min-height-100 h-100 signin-bg-cover">
+    <div class="bg-cover bg-3 d-none d-md-inline-flex col-md-6 col-lg-12"></div>
+    <div class="card card-body mb-0 rounded-0 p-5 page-signin col-sm-12 col-md-6 col-lg-4">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="mb-3 text-center">
+                <img src="assets/images/stwlogo.png" class="mb-3" alt="">
+                <p class="ff-headers text-uppercase">Recover your password</p>
+            </div>
+            <fieldset class="form-group">
+                <label for="username" class="form-control-label">
+          Enter your username
+        </label>
+                <input type="text" class="form-control" placeholder="Username" [formControl]="form.controls['uname']" [ngClass]="{'is-invalid': form.controls['uname'].hasError('required') && form.controls['uname'].touched}" />
+                <div class="invalid-feedback" *ngIf="form.controls['uname'].hasError('required') && form.controls['uname'].touched">Username is required.</div>
+            </fieldset>
+            <button class="btn btn-primary app-btn" type="submit" [disabled]="!form.valid">Reset password</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="d-flex align-items-stretch flex-nowrap min-height-100 h-100 signin-bg-cover">
+    <div class="bg-cover bg-2 d-none d-md-inline-flex col-md-6 col-lg-12"></div>
+    <div class="card card-body mb-0 rounded-0 p-5 page-signin col-sm-12 col-md-6 col-lg-4">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="mb-3 text-center">
+                <img src="assets/images/stwlogo.png" class="mb-3" alt="">
+                <p class="ff-headers text-uppercase">Create an account</p>
+            </div>
+            <fieldset class="form-group">
+                <label for="username">
+          Choose a username
+        </label>
+                <input type="text" class="form-control" placeholder="username" [formControl]="form.controls['uname']" [ngClass]="{'is-invalid': form.controls['uname'].hasError('required') && form.controls['uname'].touched}" />
+                <div class="invalid-feedback" *ngIf="form.controls['uname'].hasError('required') && form.controls['uname'].touched">Username is required.</div>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="password">
+          Enter your password
+        </label>
+                <input type="password" class="form-control" placeholder="********" [formControl]="form.controls['password']" [ngClass]="{'is-invalid': form.controls['password'].hasError('required') && form.controls['password'].touched}" />
+                <div class="invalid-feedback" *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched">Password is required.</div>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="password">
+          Confirm your password
+        </label>
+                <input type="password" class="form-control" placeholder="********" [formControl]="form.controls['confirmPassword']" [ngClass]="{'is-invalid': form.controls['confirmPassword'].hasError('required') && form.controls['confirmPassword'].touched || form.controls['confirmPassword'].hasError('equalTo') && form.controls['confirmPassword'].touched}"
+                />
+                <div class="invalid-feedback" *ngIf="form.controls['confirmPassword'].hasError('required') && form.controls['confirmPassword'].touched">Confirm your password.</div>
+                <div class="invalid-feedback" *ngIf="form.controls['confirmPassword'].hasError('equalTo') && form.controls['confirmPassword'].touched">Password should match.</div>
+            </fieldset>
+            <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">I have read and agree to the terms of service.</label>
+            </div>
+            <div class="block mb-3"></div>
+            <button class="btn btn-primary app-btn" type="submit" [disabled]="!form.valid">Create</button>
+            <a class="btn btn-outline-primary btn-link ml-1 app-btn" [routerLink]="['/authentication/signin']">Login!</a>
+        </form>
+    </div>
+</div>

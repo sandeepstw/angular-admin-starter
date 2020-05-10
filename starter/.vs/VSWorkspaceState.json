@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\stw",
+    "\\stw\\app",
+    "\\stw\\app\\views",
+    "\\stw\\app\\views\\auth\\forgot",
+    "\\stw\\app\\views\\auth\\signin",
+    "\\stw\\app\\views\\auth\\signup",
+    "\\stw\\assets\\styles",
+    "\\stw\\assets\\styles\\scss"
+  ],
+  "SelectedNode": "\\package.json",
+  "PreviewInSolutionExplorer": false
+}
