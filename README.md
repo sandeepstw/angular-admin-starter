@@ -26,3 +26,19 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Command Line:
+![Command Line](https://github.com/stw-services/angular-admin-starter/blob/master/starter/images/CommendLine.PNG?raw=true)
+
+## Login Page :
+![Login Page](https://github.com/stw-services/angular-admin-starter/blob/master/starter/images/Login%20Page.PNG?raw=true)
+
+## Register User :
+![Register User](https://github.com/stw-services/angular-admin-starter/blob/master/starter/images/RegistrationPage.PNG?raw=true)
+
+## Forget Password :
+![Forget Password](https://github.com/stw-services/angular-admin-starter/blob/master/starter/images/Forgot.PNG?raw=true)
+
+## Lock Screen :
+![Lock Screen](https://github.com/stw-services/angular-admin-starter/blob/master/starter/images/LogScreen.PNG)
+
